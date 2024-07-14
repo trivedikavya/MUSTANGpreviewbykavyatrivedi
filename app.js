@@ -12,8 +12,10 @@ let width = canvasform.offsetWidth;
 let height =  canvasform.offsetHeight;
 //Create a Three.JS Scene
 const scene = new THREE.Scene();
+//CREATED BY KAVYA TRIVEDI
 //create a new camera with positions and angles
 const camera = new THREE.PerspectiveCamera(70.5, width / height, 0.1, 1000);
+//CREATED BY KAVYA TRIVEDI
 //Keep track of the mouse position, so we can make the eye move
 let mouseX = width / 2;
 let mouseY = height / 2;
@@ -23,7 +25,7 @@ let object;
 let controls;
 //Instantiate a loader for the .gltf file
 const loader = new GLTFLoader();
-//Load the file
+//CREATED BY KAVYA TRIVEDI
 //PORSCHE AHI THI AYII******
 loader.load(
   'ford_mustang_shelby_gt500/scene.gltf',
@@ -33,25 +35,27 @@ loader.load(
     scene.add(object);
   }
 );
-
+//CREATED BY KAVYA TRIVEDI
 //Instantiate a new renderer and set its size
 const renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setSize(width , height ); 
-
+//CREATED BY KAVYA TRIVEDI
 //Add the renderer to the DOM
 document.getElementById("dCanvas").appendChild(renderer.domElement);
 //Set how far the camera will be from the 3D model
 // initial postion of camera setting 
 camera.position.set(3, 1.7, 6.60);
-
+//CREATED BY KAVYA TRIVEDI
 
 //Add lights to the scene, so we can actually see the 3D model
 let ambientLight = new THREE.AmbientLight(0x404040,1);
+//CREATED BY KAVYA TRIVEDI
 scene.add(ambientLight);
 let directionalLight = new THREE.DirectionalLight(0xffffff,1);
 directionalLight.position.set(0,7,0);
 directionalLight.castShadow = true;
 scene.add(directionalLight);
+//CREATED BY KAVYA TRIVEDI
 let light = new THREE.PointLight(0xc4c4c4,10);
 light.position.set(10,300,500);
 scene.add(light);
@@ -64,10 +68,10 @@ scene.add(light3);
 let light4 = new THREE.PointLight(0xc4c4c4,10);
 light4.position.set(-5000,300,500);
 scene.add(light4);
-
+//CREATED BY KAVYA TRIVEDI
 //This adds controls to the camera, so we can rotate / zoom it with the mouse
 controls = new OrbitControls(camera, renderer.domElement);
-
+//CREATED BY KAVYA TRIVEDI
 //Render the scene
 function animate() {
   requestAnimationFrame(animate);
@@ -75,7 +79,7 @@ function animate() {
   TWEEN.update();
 }
 animate();
-
+//CREATED BY KAVYA TRIVEDI
 //Add a listener to the window, so we can resize the window and the camera
 window.addEventListener("resize", function () {
   width = canvasform.offsetWidth;
@@ -84,17 +88,17 @@ window.addEventListener("resize", function () {
   camera.updateProjectionMatrix();
   renderer.setSize(width, height);
 });
-
+//CREATED BY KAVYA TRIVEDI
 let btnshowmore = document.getElementById('showmore');
 let audioElement = document.getElementById('audio');
 let slider = document.querySelector('.slider');
-
+//CREATED BY KAVYA TRIVEDI
 function runCamera(x,y,z) {
   // create position camera
     const targetPosition = new THREE.Vector3(x, y, z); 
     // time animation
     const duration = 1200;
-
+//CREATED BY KAVYA TRIVEDI
     const tween = new TWEEN.Tween(camera.position)
         .to(targetPosition, duration)
         .easing(TWEEN.Easing.Quadratic.InOut) 
@@ -103,7 +107,7 @@ function runCamera(x,y,z) {
             renderer.render(scene, camera);
         })
         .start();
-
+//CREATED BY KAVYA TRIVEDI
 }
 function playAudio() {
     audioElement.currentTime = 0;
@@ -111,7 +115,7 @@ function playAudio() {
 } 
 // button ni system
 let statusContent = 'contentOne';
-
+//CREATED BY KAVYA TRIVEDI
 btnshowmore.onclick = () => {
     playAudio();
     slider.classList.remove('contentOneAction');
@@ -122,7 +126,7 @@ btnshowmore.onclick = () => {
             runCamera(0.3, 0.6, 9);
             // let mouseX = 200;
             // width : 210;
-            
+            //CREATED BY KAVYA TRIVEDI
             statusContent = 'contentTwo';
             slider.classList.add('contentTwoAction');
             break;
@@ -137,8 +141,9 @@ btnshowmore.onclick = () => {
             slider.classList.add('contentOneAction');
             statusContent = 'contentOne';
             break;
-    
+    //CREATED BY KAVYA TRIVEDI
         default:
             break;
     }
 }
+//CREATED BY KAVYA TRIVEDI
