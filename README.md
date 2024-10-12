@@ -1,4 +1,4 @@
 # MUSTANG PREVIEW WHICH IS MADE BY KAVYA TRIVEDI
-currently on working i want to made it for rolls rocyes it is just a setup 
+I HAVE A QUESTION DID YOU HAVE A SOLUTION TO LOAD A MODEL FASTER ..? 
 <h2>PREVIEW OF THE MUSTANG </h2>
 <img src="Screenshot (24).png " alt=" " >
